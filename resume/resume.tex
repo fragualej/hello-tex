@@ -7,6 +7,8 @@
 \usepackage{parskip}
 \usepackage{xcolor}
 \usepackage{multicol}
+\usepackage{microtype}
+\usepackage{titlesec}
 
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
@@ -15,6 +17,13 @@
     urlcolor=blue,
     linkcolor=black
 }
+
+\titleformat{\section}{\Large\bfseries\color{blue!70!black}}{}{0em}{}[\titlerule]
+\setlength{\parskip}{4pt}
+
+% Custom spacing variable
+\newlength{\jobspacing}
+\setlength{\jobspacing}{0.8em}
 
 \begin{document}
 \raggedright
@@ -25,7 +34,7 @@
     \textbf{Roku Developer} \\
     Bogotá, Colombia | +57 320 244 0076 | \href{mailto:alejandrogfster@gmail.com}{alejandrogfster@gmail.com} \\
     \href{https://www.linkedin.com/in/alejandro-gutierrez-franco-06214674}{LinkedIn} |
-    \href{https://github.com/fragualej/creative-coding}{GitHub}
+    \href{https://github.com/fragualej/hello-roku}{GitHub}
 \end{center}
 
 \section*{Profile}
@@ -35,88 +44,113 @@ I'm a Roku Developer with experience in creating engaging and user-friendly stre
 \begin{multicols}{2}
 \begin{itemize}
     \item BrightScript \& SceneGraph
-    \item Roku Ads Framework (RAF), SSAI \& CSAI
+    \item Roku Ads: RAF, SSAI \& CSAI
+    \item Roku Tools: RALE, Roku Stream Tester
     \item Git, BrighterScript, Rooibos
     \item API REST \& GraphQL
     \item JavaScript, CSS, HTML, React
+    \item Communication, Collaboration, Teamwork
 \end{itemize}
 \end{multicols}
 
 \section*{Experience}
 
 \textbf{Globant - TelevisaUnivision, Remote} \\
-\emph{Roku Developer} \hfill Apr 2024 -- Present \\
+\emph{Roku Developer} \hfill \textit{Apr 2024 -- Present} \\
 \begin{itemize}[leftmargin=*]
-    \item Refactored navigation and enhanced debug menus for DMA testing.
-    \item Ensured data accuracy for analytics and solved performance bugs.
+    \item Optimized app performance by removing ghost animations and resolving analytics discrepancies.
+    \item Implemented Charles Proxy debugging tools for streamlined development workflows.
+    \item Enhanced UI consistency with refined padding, scrub bar adjustments, and visual improvements.
+    \item Delivered comprehensive bug fixes to improve overall user experience.
 \end{itemize}
 
-\vspace{0.5em}
+\vspace{\jobspacing}
 
-\textbf{X-Team, Remote} \\
-\emph{Roku Developer} \hfill Oct 2024 -- Feb 2025 \\
+\textbf{X-Team - Venu Sports, Remote} \\
+\emph{Roku Developer} \hfill \textit{Oct 2024 -- Feb 2025} \\
 \begin{itemize}[leftmargin=*]
-    \item Refactored navigation and enhanced debug menus for DMA testing.
-    \item Ensured data accuracy for analytics and solved performance bugs.
+    \item Refactored navigation architecture to enhance user flow and reduce friction.
+    \item Developed enhanced debug menu functionality for efficient DMA compliance testing.
+    \item Implemented data validation systems ensuring accurate analytics reporting.
+    \item Resolved critical performance bottlenecks and application stability issues.
 \end{itemize}
 
-\textbf{NBCUniversal (Stand8), Remote} \\
-\emph{Roku Developer} \hfill Jul 2023 -- Aug 2024 \\
+\vspace{\jobspacing}
+
+\textbf{Stand8 - NBCUniversal, Remote} \\
+\emph{Roku Developer} \hfill \textit{Jul 2023 -- Aug 2024} \\
 \begin{itemize}[leftmargin=*]
-    \item Implemented features for the 2024 Olympics, including GraphQL bridges.
-    \item Developed global text-to-speech components.
-    \item Improved video playback experience by creating a new component for handling pause ads within the videoplayer UI.
-    \item Developed custom functions to handle date and time strings on legacy devices.
-    \item Refactored navigation bars to prevent glitches during item focus, item selection,
-and screen stack changes.
+    \item Delivered 2024 Olympics features including dedicated screens, GraphQL bridges, and event integration.
+    \item Enhanced accessibility with global text-to-speech component for improved user experience.
+    \item Built custom date/time handling functions for legacy device compatibility.
+    \item Developed pause ad component integrated within video player UI for seamless ad delivery.
+    \item Refactored navigation system eliminating focus glitches and screen transition issues.
+    \item Implemented data validation to ensure accurate analytics reporting and system reliability.
 \end{itemize}
 
-\textbf{PBS (Globant), Bogotá} \\
-\emph{Roku Developer} \hfill Apr 2022 -- Jun 2023 \\
+\vspace{\jobspacing}
+
+\textbf{Globant - PBS Kids | PBS GA, Remote} \\
+\emph{Roku Developer} \hfill \textit{Apr 2022 -- Jun 2023} \\
 \begin{itemize}[leftmargin=*]
-    \item Developed HTTP data fetching for Home and Detail screens.
-    \item Integrated RAF ads and enhanced accessibility.
+    \item Architected complete video playback system using SGDEX framework with DRM support, ads integration, and optimized performance through SceneGraph threading.
+    \item Developed comprehensive HTTP data services for Home and Details screens with robust error handling.
+    \item Integrated Roku Ads Framework (RAF) for seamless ad delivery and revenue optimization.
+    \item Built StationScreen with donation features, TV Guide functionality, and enhanced accessibility via text-to-speech.
+    \item Implemented user-friendly error handling for connectivity, location, and server issues.
 \end{itemize}
 
-\textbf{Discovery Channel (Globant), Bogotá} \\
-\emph{Roku Developer} \hfill Nov 2021 -- Mar 2024 \\
+\vspace{\jobspacing}
+
+\textbf{Globant - Discovery Channel, Remote} \\
+\emph{Roku Developer} \hfill \textit{Nov 2021 -- Mar 2024} \\
 \begin{itemize}[leftmargin=*]
     \item Contributed to unit testing with BrighterScript and Rooibos.
 \end{itemize}
 
-\textbf{NFL (Globant), Bogotá} \\
-\emph{Roku Developer} \hfill Jan 2021 -- Oct 2021 \\
+\vspace{\jobspacing}
+
+\textbf{Globant - NFL , Remote} \\
+\emph{Roku Developer} \hfill \textit{Jan 2021 -- Oct 2021} \\
 \begin{itemize}[leftmargin=*]
-    \item Developed core UI components and transitioned NFL app to in-house solutions.
+    \item Contributed to the transition from a licensing model to an in-house BrightScript/SceneGraph solution for the NFL.
+    \item Developed core UI components, including:
+    \begin{itemize}[leftmargin=*]
+        \item Horizontal navigation bar
+        \item Season/week selector button and modal
+        \item Game Details Screen for various game states (upcoming, live, replay)
+        \item Audio streaming video interface
+    \end{itemize}
+    \item Successfully resolved bugs to ensure a seamless user experience.
 \end{itemize}
 
 \section*{Education}
 \textbf{Bachelor in Mechanical Engineering} \\
-Universidad Distrital Francisco José de Caldas, Bogotá \hfill 2012 -- 2014 \\
+Universidad Distrital Francisco José de Caldas, Bogotá \hfill \textit{2012 -- 2014} \\
 Meritorious Thesis: UI Development (Matlab GUI-Ansys) for welding joints.
 
 \textbf{Mechanical Engineering Technologist} \\
-Universidad Distrital Francisco José de Caldas, Bogotá \hfill 2008 -- 2011 \\
+Universidad Distrital Francisco José de Caldas, Bogotá \hfill \textit{2008 -- 2011} \\
 Thesis: UI for strength determination of composite materials.
 
 \section*{Courses}
 \begin{itemize}[leftmargin=*]
-    \item Meta Front-End Developer, Coursera (2024 -- Present)
-    \item Arduino, Universidad de los Andes (May 2024)
-    \item Creative Coding 2.0, Domestika (2022)
-    \item BrightScript - SceneGraph, Rolat (2020)
+    \item Pair Programming with a Large Language Model, DeepLearning \hfill \textit{Sep 2025}
+    \item ChatGPT Prompt Engineering for Developers, DeepLearning \hfill \textit{Sep 2025}
+    \item React basics, Coursera \hfill \textit{Apr 2025}
+    \item HTML \& CSS in depth, Coursera \hfill \textit{Feb 2025}
+    \item Programming with JavaScript, Coursera \hfill \textit{Jan 2025}
+    \item Introduction to Front-End Development, Coursera \hfill \textit{Oct 2024}
+    \item Arduino, Universidad de los Andes \hfill \textit{May 2014}
+    \item Creative Coding 2.0, Domestika \hfill \textit{May 2022}
+    \item BrightScript - SceneGraph, Rolat \hfill \textit{Dec 2020}
 \end{itemize}
 
-\section*{Skills}
-\textbf{Languages:} BrightScript, SceneGraph, JavaScript, GraphQL \\
-\textbf{Tools:} RALE, Roku Stream Tester, BrighterScript, Rooibos, Git \\
-\textbf{Soft Skills:} Communication, Collaboration, Teamwork
-
 \section*{Languages}
-\textbf{English:} Fluent
+\textbf{English:} B2 - Fluent
 
 \section*{Hobbies}
-Sci-Fi reading, Running, Traveling, Watching movies, Dining out.
+Sci-Fi reading, Running, Cooking, Traveling, Watching movies, Dining out.
 
 \section*{References}
 \textbf{Eng. Juan Carlos Joya} \\
