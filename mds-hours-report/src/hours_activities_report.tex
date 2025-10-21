@@ -1,0 +1,223 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue
+}
+
+% Custom date format for week ranges
+\newdateformat{weekdate}{\shortmonthname[\THEMONTH] \THEDAY}
+
+% Custom command for week ranges.
+\newcommand{\weekrange}[6]{%
+    \weekdate\formatdate{#1}{#2}{#3} - \weekdate\formatdate{#4}{#5}{#6}, #3%
+}
+
+% Counter for automatic hour calculation
+\newcounter{totalhours}
+\setcounter{totalhours}{0}
+
+% Counter for w1, w2, w3, w4
+\newcounter{weekHours1}
+\newcounter{weekHours2}
+\newcounter{weekHours3}
+\newcounter{weekHours4}
+\newcounter{monthHoursTotal}
+
+\setcounter{weekHours1}{0}
+\setcounter{weekHours2}{0}
+\setcounter{weekHours3}{0}
+\setcounter{weekHours4}{0}
+\setcounter{monthHoursTotal}{0}
+
+% Counter for weekly subtotals
+\newcounter{weeklyhours}
+\setcounter{weeklyhours}{0}
+
+% Command to add hours to both total and weekly counters
+\newcommand{\addhours}[1]{
+    \addtocounter{totalhours}{#1}\addtocounter{weeklyhours}{#1}#1
+}
+
+% Command to display and reset weekly total
+\newcommand{\weeklysubtotal}{\textbf{\arabic{weeklyhours}}\setcounter{weeklyhours}{0}}
+
+% Command for manual weekly subtotal (when you want to specify the total)
+\newcommand{\weeklysubtotalmanual}[1]{\textbf{#1}\setcounter{weeklyhours}{0}}
+
+% Header setup
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Hours \& Activities Report}
+\rhead{\today}
+\cfoot{\thepage}
+
+\title{\textbf{Week Hours \& Activities Report}}
+\author{Alejandro Gutiérrez Franco - Roku Dev}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% \section{Report Overview}
+% This document tracks weekly activities and hours across different sprints. Each section represents a week within a sprint, with automatic hour calculation for totals.
+
+% Sprint 1: Week 1
+\section{Week 1}
+\subsection{Week Summary}
+Week of: \weekrange{30}{09}{2025}{3}{10}{2025}
+
+\begin{longtable}{p{6cm}c p{6cm}}
+\toprule
+\textbf{Activity} & \textbf{Hours} & \textbf{Notes/Comments} \\
+\midrule
+\endhead%
+Daystar Kick Off & \addhours{12} & Daystar document \& meeting \\
+\midrule
+Setup \& Foundation & \addhours{4} & Clone repo \& Hello World \\
+\midrule
+\textbf{Weeks Total} & \weeklysubtotal & \\
+\bottomrule
+\end{longtable}
+
+% Sprint 1: Week 2
+\section{Week 2}
+\subsection{Week Summary}
+Week of: \weekrange{06}{10}{2025}{10}{10}{2025}
+
+\begin{longtable}{p{6cm}c p{6cm}}
+\toprule
+\textbf{Activity} & \textbf{Hours} & \textbf{Notes/Comments} \\
+\midrule
+\endhead%
+Project Timeline & \addhours{4} & Tasks \(|\) Subtasks \(|\) Tickets \\
+\midrule
+\href{https://mdsdigital.atlassian.net/browse/DAYS-136}{DAYS-136}: Build scripts & \addhours{8} & \href{https://github.com/mdsEu/Daystar-roku-app/pull/2}{PR\#2} \\
+\midrule
+\textbf{Week Total} & \weeklysubtotal& \\
+\bottomrule
+\end{longtable}
+
+% Sprint 2: Week 1
+\section{Week 3}
+\subsection{Week Summary}
+Week of: \weekrange{14}{10}{2025}{17}{10}{2025}
+
+\begin{longtable}{p{6cm} c p{6cm}}
+\toprule
+\textbf{Activity} & \textbf{Hours} & \textbf{Notes/Comments} \\
+\midrule
+\endhead%
+\href{https://mdsdigital.atlassian.net/browse/DAYS-137}{DAYS-137}: Core Dev I & \addhours{16} & \href{https://github.com/mdsEu/Daystar-OTT-Roku/pull/4}{PR\#4}\\
+\midrule
+\textbf{Week Total} & \weeklysubtotal& \\
+\bottomrule
+\end{longtable}
+
+% % Sprint 2: Week 2
+% \section{Sprint 2: Week 2 (S2:W2)}
+% \subsection{Week Summary}
+% % Week of: \weekrange{DD}{MM}{YYYY}{DD}{MM}{YYYY}
+
+% \begin{longtable}{|p{6cm}|c|p{6cm}|}
+% \hline
+% \textbf{Activity} & \textbf{Hours} & \textbf{Notes/Comments} \\
+% \hline
+% \endhead
+% Feature Completion & \addhours{8} & Finished dashboard features \\
+% \hline
+% Performance Optimization & \addhours{4} & Database query optimization \\
+% \hline
+% User Testing & \addhours{3} & User acceptance testing \\
+% \hline
+% Documentation & \addhours{2} & User guide updates \\
+% \hline
+% Sprint Review & \addhours{2} & Sprint demo and review \\
+% \hline
+% Deployment & \addhours{3} & Production deployment \\
+% \hline
+% \textbf{Week Total} & \weeklysubtotal & \\
+% \hline
+% \end{longtable}
+
+% Final Report Section
+\section{Final Hours Summary}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Period} & \textbf{Hours} \\
+\midrule
+Week 1 (W1) & 16 \\
+Week 2 (W2) & 12 \\
+Week 3 (W3) & 16 \\
+% Sprint 2: Week 2 (S2:W2) & 22 \\
+\midrule
+\textbf{Total Hours} & \textbf{\arabic{totalhours}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
+
+% \subsection{Summary Notes}
+% \begin{itemize}
+%     \item Total tracked hours: \textbf{\arabic{totalhours}} hours
+%     \item Average hours per week: \textbf{\the\numexpr\value{totalhours}/4\relax} hours
+%     \item Project completion rate: [To be filled]
+%     \item Key achievements: [To be filled]
+% \end{itemize}
+
+% Template for adding new weeks
+% \newpage
+% \section{Template for New Week}
+% \textit{Copy this template when adding a new week:}
+
+% \begin{verbatim}
+% % Sprint X: Week Y
+% \section{Sprint X: Week Y (SX:WY)}
+% \subsection{Week Summary}
+% Week of: \weekrange{DD}{MM}{YYYY}{DD}{MM}{YYYY}
+
+% \begin{longtable}{|p{6cm}|c|p{6cm}|}
+% \hline
+% \textbf{Activity} & \textbf{Hours} & \textbf{Notes/Comments} \\
+% \hline
+% \endhead
+% [Activity Name] & \addhours{X} & [Description] \\
+% \hline
+% [Activity Name] & \addhours{X} & [Description] \\
+% \hline
+% \textbf{Week Total} & \weeklysubtotal & \\
+% \hline
+% \end{longtable}
+% \end{verbatim}
+
+% \textbf{Instructions for updating:}
+% \begin{enumerate}
+%     \item Copy the template above
+%     \item Replace X and Y with appropriate sprint and week numbers
+%     \item Fill in activities, hours, and notes
+%     \item Update the final summary table with new totals
+%     \item The \texttt{\textbackslash addhours\{X\}} command automatically adds to the total counter
+% \end{enumerate}
+
+\end{document}
